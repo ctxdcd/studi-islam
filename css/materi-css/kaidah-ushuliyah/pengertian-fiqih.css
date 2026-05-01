@@ -39,6 +39,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow: hidden;
 }
 
 .chapter-container {
@@ -51,9 +52,16 @@ body {
   flex: 1;
   padding: 100px 80px;
   max-width: 1000px;
-  transition: all 0.5s var(--easing);
-  position: relative;
-  z-index: 1;
+
+  height: 100vh;
+  overflow-y: auto;
+
+  /* hide scrollbar */
+  scrollbar-width: none;
+}
+
+.content-area::-webkit-scrollbar {
+  display: none;
 }
 
 .sidebar {
