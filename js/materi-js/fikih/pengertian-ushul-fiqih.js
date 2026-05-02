@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navItems = document.querySelectorAll(".nav-item");
-  const sections = document.querySelectorAll(".materi-section");
+  const ushulNavItems = document.querySelectorAll(".nav-item");
+  const ushulSections = document.querySelectorAll(".materi-section");
 
-  navItems.forEach((item) => {
+  ushulNavItems.forEach((item) => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
 
-      navItems.forEach((nav) => nav.classList.remove("active"));
+      ushulNavItems.forEach((nav) => nav.classList.remove("active"));
       item.classList.add("active");
 
       const targetId = item.getAttribute("href").substring(1);
-      sections.forEach((section) => {
+      ushulSections.forEach((section) => {
         section.classList.remove("active");
         if (section.id === targetId) {
           section.classList.add("active");
@@ -65,4 +65,29 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeModal();
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ushulModal = document.getElementById("ushulModal");
+  const openUshulModal = document.getElementById("openUshulModal");
+  const closeUshulModal = document.getElementById("closeUshulModal");
+
+  if (openUshulModal && ushulModal && closeUshulModal) {
+    openUshulModal.addEventListener("click", () => {
+      ushulModal.classList.add("active");
+      ushulModal.setAttribute("aria-hidden", "false");
+    });
+
+    closeUshulModal.addEventListener("click", () => {
+      ushulModal.classList.remove("active");
+      ushulModal.setAttribute("aria-hidden", "true");
+    });
+
+    ushulModal.addEventListener("click", (e) => {
+      if (e.target === ushulModal) {
+        ushulModal.classList.remove("active");
+        ushulModal.setAttribute("aria-hidden", "true");
+      }
+    });
+  }
 });
