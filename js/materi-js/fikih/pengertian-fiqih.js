@@ -66,3 +66,29 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeModal();
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("grammarModal");
+  const openBtn = document.getElementById("openGrammarModal");
+  const closeBtn = document.getElementById("closeGrammarModal");
+
+  if (openBtn && modal && closeBtn) {
+    openBtn.addEventListener("click", () => {
+      modal.classList.add("active");
+      modal.setAttribute("aria-hidden", "false");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.classList.remove("active");
+      modal.setAttribute("aria-hidden", "true");
+    });
+
+    // Close on click outside
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("active");
+      }
+    });
+  }
+});
+

@@ -43,3 +43,21 @@ document.addEventListener("click", (e) => {
     });
   }
 });
+
+const openInfo = document.getElementById("openInfo");
+const closeInfo = document.getElementById("closeInfo");
+const modal = document.getElementById("infoModal");
+
+openInfo.addEventListener("click", () => {
+  modal.classList.add("active");
+});
+
+closeInfo.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+  }
+});
