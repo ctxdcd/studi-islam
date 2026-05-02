@@ -520,6 +520,19 @@ h2 {
   backdrop-filter: blur(10px);
 }
 
+
+.ref-link a {
+    color: inherit; /* Mengikuti warna teks paragraf kamu */
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    word-wrap: break-word; /* Penting! Supaya link panjang tidak 'balapan' keluar layar HP */
+    overflow-wrap: break-word;
+}
+
+.ref-link a:hover {
+    opacity: 0.7; /* Memberikan efek interaksi saat disentuh/hover */
+    text-decoration: underline; /* Muncul garis bawah tipis saat di-hover */
+}
+
 /* Catatan Khusus untuk Link Repo */
 .ref-note {
   margin-top: 24px;
@@ -552,20 +565,6 @@ h2 {
   font-weight: 600;
 }
 
-
-/* Menghilangkan warna biru default dan garis bawah */
-.ref-link a {
-    color: inherit; 
-    text-decoration: none;
-    word-break: break-all; /* Jaga-jaga kalau link kepanjangan di layar HP */
-    transition: opacity 0.3s ease;
-}
-
-/* Memberikan sedikit efek saat kursor di atas link */
-.ref-link a:hover {
-    opacity: 0.6;
-    text-decoration: underline;
-}
 /* =========================
    // L // MEDIA QUERIES
 ========================= */
@@ -781,7 +780,6 @@ h2 {
 /* =========================
    // O // ANALYSIS BOX (SEC 4 BREAKDOWN)
 ========================= */
-
 .fiqh-analysis {
   margin-top: 20px;
   padding: 20px;
@@ -832,7 +830,6 @@ h2 {
 /* =========================
    // O2 // CONCEPT NOTE CARD (SEC 4 CLOSING INSIGHT)
 ========================= */
-
 .fiqh-note-card {
   margin-top: 18px;
   padding: 18px;
@@ -881,11 +878,9 @@ h2 {
   background: rgba(255, 255, 255, 0.12);
 }
 
-
 /* =========================
-   // P // SYAR'IYYAH TABLE CARD
+   // P // TABLE CARD
 ========================= */
-
 .fiqh-table-card {
   margin-top: 18px;
   padding: 20px;
@@ -978,3 +973,5 @@ h2 {
   padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
+
+

@@ -519,6 +519,50 @@ h2 {
   backdrop-filter: blur(10px);
 }
 
+.ref-link a {
+    color: inherit; /* Mengikuti warna teks paragraf kamu */
+    text-decoration: none; /* Menghilangkan garis bawah default */
+    word-wrap: break-word; /* Penting! Supaya link panjang tidak 'balapan' keluar layar HP */
+    overflow-wrap: break-word;
+}
+
+.ref-link a:hover {
+    opacity: 0.7; /* Memberikan efek interaksi saat disentuh/hover */
+    text-decoration: underline; /* Muncul garis bawah tipis saat di-hover */
+}
+
+/* Catatan Khusus untuk Link Repo */
+.ref-note {
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.ref-note-icon {
+  color: rgba(124, 200, 255, 0.8); /* Warna biru muda lembut agar senada dengan icon ref-num */
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ref-note p {
+  margin: 0 !important;
+  font-size: 11px !important;
+  line-height: 1.6 !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-weight: 400;
+}
+
+.ref-note p em {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: normal;
+  font-weight: 600;
+}
+
 /* =========================
    // L // MEDIA QUERIES
 ========================= */
@@ -835,3 +879,4 @@ h2 {
   margin: 10px 0;
   background: rgba(255, 255, 255, 0.12);
 }
+
